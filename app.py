@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory, flash, jsonify
 from werkzeug.utils import secure_filename
-import cv2
+#import cv2
 import numpy as np
 import json
 import requests
@@ -162,8 +162,8 @@ def event_handle(event):
             replyObj = TextSendMessage(text="อย่างจ๊าบเลยคับบ")
             line_bot_api.reply_message(rtoken, replyObj)
         else :
-            #headers = request.headers
-            #json_headers = json.dumps({k:v for k, v in headers.items()})
+            headers = request.headers
+            json_headers = json.dumps({k:v for k, v in headers.items()})
             '''
             json_line = request.get_json(force=False,cache=False)
             json_line = json.dumps(json_line)
